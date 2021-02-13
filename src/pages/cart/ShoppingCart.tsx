@@ -29,7 +29,9 @@ const ShoppingCart = (props: any) => {
     }
 
     const checkout = () => {
-        axios.post('http://stars.test/api/checkout');
+        axios.post('http://stars.test/api/checkout', {
+            total_price: getPrice().total,
+        });
     }
     const getPrice = () => {
         var sum = {
