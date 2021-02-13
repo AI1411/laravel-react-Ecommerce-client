@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
+import Navbar from './layouts/Navnar';
+import Users from "./pages/Users";
+import UserCreate from "./pages/UserCreate";
+import Top from "./pages/Top";
+import ProductDetail from "./pages/products/ProductDetail";
+import Products from './pages/products/Products';
+import ShoppingCart from "./pages/cart/ShoppingCart";
+import CategoryProducts from "./pages/categories/CategoryProducts";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <Router>
+            <Navbar/>
+            <Switch>
+                <Route path="/" component={Top} exact/>
+                <Route path="/users" component={Users} exact/>
+                <Route path="/users_create" component={UserCreate} exact/>
+                <Route path="/products/:id" component={ProductDetail} exact/>
+                <Route path="/products" component={Products} exact/>
+                <Route path="/category/:slug/products" component={CategoryProducts} exact/>
+                <Route path="/cart" component={ShoppingCart} exact/>
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;
