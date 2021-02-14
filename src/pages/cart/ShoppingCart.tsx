@@ -31,6 +31,10 @@ const ShoppingCart = (props: any) => {
     const checkout = () => {
         axios.post('http://stars.test/api/checkout', {
             total_price: getPrice().total,
+        }).then(() => {
+            window.location.href = '/products';
+        }).catch(err => {
+            console.log(err)
         });
     }
     const getPrice = () => {

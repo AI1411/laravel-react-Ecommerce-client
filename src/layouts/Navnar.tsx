@@ -89,6 +89,18 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </li>
+                        <li className="hoverable hover:bg-blue-800 hover:text-white">
+                            <input type="checkbox" value="selected" id="toggle-one" className="toggle-input"/>
+                            <label htmlFor="toggle-one"
+                                   className="block cursor-pointer py-6 px-4 lg:p-6 text-sm lg:text-base font-bold">メニュー</label>
+                            <div role="toggle" className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
+                                <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
+                                    <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
+                                        <li><Link to={'/history'}>購入履歴</Link></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
                         <NavbarCart/>
                     </ul>
                 </div>
