@@ -10,6 +10,7 @@ import Products from './pages/products/Products';
 import ShoppingCart from "./pages/cart/ShoppingCart";
 import CategoryProducts from "./pages/categories/CategoryProducts";
 import PurchaseHistory from "./pages/histories/PurchaseHistory";
+import Favorites from "./pages/favorites/Favorites";
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path="/category/:slug/products" component={CategoryProducts} exact/>
                 <Route path="/cart" component={ShoppingCart} exact/>
                 <Route path="/history" component={PurchaseHistory} exact/>
+                <Route path="/favorites" component={Favorites} exact/>
             </Switch>
         </Router>
     );
