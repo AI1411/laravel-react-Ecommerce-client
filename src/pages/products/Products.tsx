@@ -47,7 +47,8 @@ const Products = () => {
                             </a>
                         </div>
                         <div className="md:w-2/3 md:flex lg:mt-0 rounded ml-auto">
-                            <select onChange={e => setPriceQuery(e.target.value)} className="form-select block focus:bg-white" id="my-select">
+                            <select onChange={e => setPriceQuery(e.target.value)}
+                                    className="form-select block focus:bg-white" id="my-select">
                                 <option value="">-----</option>
                                 <option value="3000">3000円以下</option>
                                 <option value="5000">5000円以下</option>
@@ -73,15 +74,14 @@ const Products = () => {
                     {message}
                     {products.map((product: any, index) =>
                         <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" key={index}>
-                            <Link to={`products/${product.id}`}>
+                            <Link to={`/products/${product.id}`}>
                                 <img className="hover:grow hover:shadow-lg h-48 w-56 object-contain"
-                                     src={product.image}
-                                />
-                                <div className="pt-3 flex items-center justify-between">
-                                    <p className="">{product.product_name}</p>
-                                </div>
-                                <p className="pt-1 text-gray-900">¥{product.price}</p>
+                                     src={product.image}/>
                             </Link>
+                            <div className="pt-3 flex items-center">
+                                <p className="">{product.product_name}</p>
+                            </div>
+                            <p className="pt-1 text-gray-900">¥ {product.price}</p>
                         </div>
                     )}
                 </div>

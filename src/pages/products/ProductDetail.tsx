@@ -3,7 +3,6 @@ import axios from "axios";
 import {ProductType} from "../../types/product";
 
 const ProductDetail = (props: any) => {
-    console.log(props)
     const [product, setProduct] = useState<ProductType>({
         id: 0,
         product_name: "",
@@ -27,6 +26,13 @@ const ProductDetail = (props: any) => {
         axios.post(`http://stars.test/api/carts/${productId}`, {
             product_id: productId,
             user_id: 1
+        })
+    }
+
+    const addToFavorite = () => {
+        axios.post(`http://stars.test/api/favorites`, {
+            product_id: productId,
+            user_id: 1,
         })
     }
     return (
@@ -55,15 +61,22 @@ const ProductDetail = (props: any) => {
                                 <span className="text-2xl leading-none align-baseline">¥</span>
                                 <span className="font-bold text-5xl leading-none align-baseline">{product.price}</span>
                             </div>
-                            <div className="inline-block align-bottom">
-                                <button
-                                    className="bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"
-                                    onClick={addToCart}
-                                >
-                                    <i className="mdi mdi-cart -ml-2 mr-2"/>
-                                    カートに入れる
-                                </button>
-                            </div>
+                        </div>
+                        <div className="inline-block align-bottom mt-3">
+                            <button
+                                className="bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-2 py-2 font-semibold"
+                                onClick={addToCart}
+                            >
+                                <i className="mdi mdi-cart -ml-2 mr-2"/>
+                                カートに入れる
+                            </button>
+                            <button
+                                className="bg-blue-50 opacity-75 hover:opacity-100 ml-2 text-black hover:text-gray-900 rounded-full px-2 py-2 font-semibold"
+                                onClick={addToFavorite}
+                            >
+                                <i className="mdi mdi-cart -ml-2 mr-2"/>
+                                お気に入りに追加する
+                            </button>
                         </div>
                     </div>
                 </div>

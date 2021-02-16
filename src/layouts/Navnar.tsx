@@ -104,6 +104,11 @@ const Navbar = () => {
                                         <li><Link to={'/favorites'}>お気に入り</Link></li>
                                     </ul>
                                 </div>
+                                <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
+                                    <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
+                                        <li><Link to={'/profile'}>プロフィール</Link></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <NavbarCart/>

@@ -6,9 +6,20 @@ const ShoppingCart = (props: any) => {
     const [cartItems, setCartItems] = useState([]);
     const [user, setUser] = useState<UserType>({
         id: 0,
-        name: "",
+        first_name: '',
+        last_name: '',
+        image: '',
+        status: {
+            text: '',
+            class: ''
+        },
+        birthday: '',
+        gender: '',
+        address: '',
+        tel: '',
         money: 0,
-        email: "",
+        email: '',
+        created_at: ''
     });
 
     useEffect(() => {

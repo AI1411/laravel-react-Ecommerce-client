@@ -11,6 +11,7 @@ import ShoppingCart from "./pages/cart/ShoppingCart";
 import CategoryProducts from "./pages/categories/CategoryProducts";
 import PurchaseHistory from "./pages/histories/PurchaseHistory";
 import Favorites from "./pages/favorites/Favorites";
+import Profile from "./pages/users/Profile";
 
 const App = () => {
     return (
@@ -26,6 +27,7 @@ const App = () => {
                 <Route path="/cart" component={ShoppingCart} exact/>
                 <Route path="/history" component={PurchaseHistory} exact/>
                 <Route path="/favorites" component={Favorites} exact/>
+                <Route path="/profile" component={Profile} exact/>
             </Switch>
         </Router>
     );
