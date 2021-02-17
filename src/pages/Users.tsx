@@ -1,10 +1,11 @@
 import React from 'react';
+import Wrapper from "./layouts/Wrapper";
 
 const Users = () => {
     return (
-        <div>
+        <Wrapper>
             users
-        </div>
+        </Wrapper>
     );
 };
 

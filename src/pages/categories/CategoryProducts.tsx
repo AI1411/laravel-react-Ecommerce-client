@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Loading from "../../components/Loading";
+import Wrapper from "../layouts/Wrapper";
 
 const CategoryProducts = (props: any) => {
     const slug = props.match.params.slug;
@@ -25,7 +26,7 @@ const CategoryProducts = (props: any) => {
         )
     }
     return (
-        <>
+        <Wrapper>
             <section className="bg-white py-8">
                 <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
 
@@ -55,7 +56,7 @@ const CategoryProducts = (props: any) => {
                     )}
                 </div>
             </section>
-        </>
+        </Wrapper>
     );
 };
 

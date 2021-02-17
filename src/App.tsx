@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
-import Navbar from './layouts/Navnar';
 import Users from "./pages/Users";
 import UserCreate from "./pages/UserCreate";
 import Top from "./pages/Top";
@@ -16,7 +15,6 @@ import Profile from "./pages/users/Profile";
 const App = () => {
     return (
         <Router>
-            <Navbar/>
             <Switch>
                 <Route path="/" component={Top} exact/>
                 <Route path="/users" component={Users} exact/>

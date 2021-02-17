@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Loading from "../../components/Loading";
 import './product.css';
+import Wrapper from '../layouts/Wrapper';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -33,7 +34,7 @@ const Products = () => {
         )
     }
     return (
-        <>
+        <Wrapper>
             <section className="bg-white py-8">
                 <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
 
@@ -86,7 +87,7 @@ const Products = () => {
                     )}
                 </div>
             </section>
-        </>
+        </Wrapper>
     );
 };
 
