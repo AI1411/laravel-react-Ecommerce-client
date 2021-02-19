@@ -1,8 +1,10 @@
 export class CategoryType {
+    id: number;
     name: string;
     slug: string;
 
-    constructor(name = "", slug = "") {
+    constructor(id = 0, name = "", slug = "") {
+        this.id = id;
         this.name = name;
         this.slug = slug;
     }

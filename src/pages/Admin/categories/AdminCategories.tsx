@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import AdminWrapper from "../layouts/AdminWrapper";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 const AdminCategories = () => {
     const [categories, setCategories] = useState([]);
@@ -22,6 +23,9 @@ const AdminCategories = () => {
                     <h1 className="text-3xl">
                         Category
                     </h1>
+                    <Link to={'/admin/categories/create'}
+                          className="ml-auto uppercase px-8 py-2 rounded bg-green-300 text-green-600 max-w-max shadow-sm hover:shadow-lg">Create Category
+                    </Link>
                 </div>
                 <div className="px-3 py-4 flex justify-center">
                     <table className="w-full text-md bg-white shadow-md rounded mb-4">

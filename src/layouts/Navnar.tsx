@@ -6,26 +6,32 @@ import NavbarCart from './NavbarCart';
 
 const Navbar = () => {
     const [categories1, setCategories1] = useState<CategoryType>({
+        id: 0,
         name: "",
         slug: "",
     });
     const [subCategory1, setSubCategory1] = useState<CategoryType[]>([{
+        id: 0,
         name: "",
         slug: "",
     }]);
     const [categories2, setCategories2] = useState<CategoryType>({
+        id: 0,
         name: "",
         slug: "",
     });
     const [subCategory2, setSubCategory2] = useState<CategoryType[]>([{
+        id: 0,
         name: "",
         slug: "",
     }]);
     const [categories3, setCategories3] = useState<CategoryType>({
+        id: 0,
         name: "",
         slug: "",
     });
     const [subCategory3, setSubCategory3] = useState<CategoryType[]>([{
+        id: 0,
         name: "",
         slug: "",
     }]);

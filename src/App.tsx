@@ -18,6 +18,7 @@ import AdminCategories from "./pages/Admin/categories/AdminCategories";
 import AdminMainCategories from "./pages/Admin/main_categories/AdminMainCategories";
 import AdminCreateProduct from "./pages/Admin/products/AdminCreateProduct";
 import AdminCrateUser from "./pages/Admin/users/AdminCrateUser";
+import AdminCreateCategory from "./pages/categories/AdminCreateCategory";
 
 const App = () => {
     return (
@@ -42,6 +43,7 @@ const App = () => {
                 <Route path="/admin/users/create" component={AdminCrateUser} exact/>
                 <Route path="/admin/main_categories" component={AdminMainCategories} exact/>
                 <Route path="/admin/categories" component={AdminCategories} exact/>
+                <Route path="/admin/categories/create" component={AdminCreateCategory} exact/>
             </Switch>
         </Router>
     );
