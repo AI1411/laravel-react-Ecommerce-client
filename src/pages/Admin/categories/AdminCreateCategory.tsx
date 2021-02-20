@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import AdminWrapper from "../Admin/layouts/AdminWrapper";
+import AdminWrapper from "../layouts/AdminWrapper";
 import axios from "axios";
-import {CategoryType} from "../../types/category";
+import {MainCategoryType} from "../../../types/mainCategory";
 
 const AdminCreateCategory = () => {
-    const [mainCategories, setMainCategories] = useState<CategoryType[]>([
+    const [mainCategories, setMainCategories] = useState<MainCategoryType[]>([
         {
             id: 0,
             name: '',
@@ -60,7 +60,7 @@ const AdminCreateCategory = () => {
                                 onChange={e => setMainCategory({...mainCategory, main_category_id: e.target.value})}
                         >
                             <option value="">----</option>
-                            {mainCategories.map((main: CategoryType, index) =>
+                            {mainCategories.map((main: MainCategoryType, index) =>
                                 <option key={index} value={main.id}>{main.name}</option>
                             )}
                         </select>

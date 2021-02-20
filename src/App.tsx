@@ -18,8 +18,9 @@ import AdminCategories from "./pages/Admin/categories/AdminCategories";
 import AdminMainCategories from "./pages/Admin/main_categories/AdminMainCategories";
 import AdminCreateProduct from "./pages/Admin/products/AdminCreateProduct";
 import AdminCrateUser from "./pages/Admin/users/AdminCrateUser";
-import AdminCreateCategory from "./pages/categories/AdminCreateCategory";
+import AdminCreateCategory from "./pages/Admin/categories/AdminCreateCategory";
 import AdminCreateMainCategory from "./pages/Admin/main_categories/AdminCreateMainCategory";
+import AdminCategoryEdit from "./pages/Admin/categories/AdminCategoryEdit";
 
 const App = () => {
     return (
@@ -38,14 +39,19 @@ const App = () => {
                 <Route path="/profile" component={Profile} exact/>
                 {/*管理画面*/}
                 <Route path="/admin/dashboard" component={Dashboard} exact/>
+                {/*Product*/}
                 <Route path="/admin/products" component={AdminProducts} exact/>
                 <Route path="/admin/products/create" component={AdminCreateProduct} exact/>
+                {/*User*/}
                 <Route path="/admin/users" component={AdminUsers} exact/>
                 <Route path="/admin/users/create" component={AdminCrateUser} exact/>
+                {/*MainCategory*/}
                 <Route path="/admin/main_categories" component={AdminMainCategories} exact/>
                 <Route path="/admin/main_categories/create" component={AdminCreateMainCategory} exact/>
+                {/*Category*/}
                 <Route path="/admin/categories" component={AdminCategories} exact/>
                 <Route path="/admin/categories/create" component={AdminCreateCategory} exact/>
+                <Route path="/admin/categories/:slug/edit" component={AdminCategoryEdit} exact/>
             </Switch>
         </Router>
     );

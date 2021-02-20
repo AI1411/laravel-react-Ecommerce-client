@@ -3,9 +3,10 @@ import {Link} from 'react-router-dom';
 import axios from "axios";
 import {CategoryType} from "../types/category";
 import NavbarCart from './NavbarCart';
+import {MainCategoryType} from "../types/mainCategory";
 
 const Navbar = () => {
-    const [categories1, setCategories1] = useState<CategoryType>({
+    const [categories1, setCategories1] = useState<MainCategoryType>({
         id: 0,
         name: "",
         slug: "",
@@ -14,8 +15,10 @@ const Navbar = () => {
         id: 0,
         name: "",
         slug: "",
+        main_category: '',
+        main_category_id: 0,
     }]);
-    const [categories2, setCategories2] = useState<CategoryType>({
+    const [categories2, setCategories2] = useState<MainCategoryType>({
         id: 0,
         name: "",
         slug: "",
@@ -24,8 +27,10 @@ const Navbar = () => {
         id: 0,
         name: "",
         slug: "",
+        main_category: '',
+        main_category_id: 0,
     }]);
-    const [categories3, setCategories3] = useState<CategoryType>({
+    const [categories3, setCategories3] = useState<MainCategoryType>({
         id: 0,
         name: "",
         slug: "",
@@ -34,6 +39,8 @@ const Navbar = () => {
         id: 0,
         name: "",
         slug: "",
+        main_category: '',
+        main_category_id: 0,
     }]);
     useEffect(() => {
         getCategories();

@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import AdminWrapper from "../layouts/AdminWrapper";
 import {CategoryType} from "../../../types/category";
 import axios from "axios";
+import {MainCategoryType} from "../../../types/mainCategory";
 
 const AdminCreateMainCategory = () => {
-    const [mainCategory, setMainCategory] = useState<CategoryType>({
+    const [mainCategory, setMainCategory] = useState<MainCategoryType>({
         id: 0,
         name: '',
         slug: '',
