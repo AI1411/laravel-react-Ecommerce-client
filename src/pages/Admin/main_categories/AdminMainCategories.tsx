@@ -44,9 +44,9 @@ const AdminMainCategories = () => {
                                     {category.name}
                                 </td>
                                 <td className="p-3 px-5 flex justify-end">
-                                    <button type="button"
-                                            className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save
-                                    </button>
+                                    <Link to={`/admin/main_categories/${category.id}/edit`} type="button"
+                                            className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit
+                                    </Link>
                                     <button type="button"
                                             className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete
                                     </button>
