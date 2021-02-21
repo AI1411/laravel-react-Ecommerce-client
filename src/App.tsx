@@ -22,6 +22,7 @@ import AdminCreateCategory from "./pages/Admin/categories/AdminCreateCategory";
 import AdminCreateMainCategory from "./pages/Admin/main_categories/AdminCreateMainCategory";
 import AdminCategoryEdit from "./pages/Admin/categories/AdminCategoryEdit";
 import AdminMainCategoryEdit from "./pages/Admin/main_categories/AdminMainCategoryEdit";
+import AdminProductEdit from "./pages/Admin/products/AdminProductEdit";
 
 const App = () => {
     return (
@@ -43,6 +44,7 @@ const App = () => {
                 {/*Product*/}
                 <Route path="/admin/products" component={AdminProducts} exact/>
                 <Route path="/admin/products/create" component={AdminCreateProduct} exact/>
+                <Route path="/admin/products/:slug/edit" component={AdminProductEdit} exact/>
                 {/*User*/}
                 <Route path="/admin/users" component={AdminUsers} exact/>
                 <Route path="/admin/users/create" component={AdminCrateUser} exact/>

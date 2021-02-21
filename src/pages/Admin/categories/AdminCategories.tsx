@@ -17,7 +17,7 @@ const AdminCategories = () => {
         setCategories(data);
     }
     return (
-        <AdminWrapper>
+        <AdminWrapper active={'categories'}>
             <div className="text-gray-900 bg-gray-200 w-full">
                 <div className="p-4 flex">
                     <h1 className="text-3xl">

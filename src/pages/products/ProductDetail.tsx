@@ -10,6 +10,7 @@ const ProductDetail = (props: any) => {
         description: "",
         price: 0,
         image: "",
+        category_id: 0
     });
     const productId = props.match.params.id;
 

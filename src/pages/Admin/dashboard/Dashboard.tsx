@@ -3,7 +3,7 @@ import AdminWrapper from "../layouts/AdminWrapper";
 
 const Dashboard = () => {
     return (
-        <AdminWrapper>
+        <AdminWrapper active={'dashboard'}>
             admin
         </AdminWrapper>
     );

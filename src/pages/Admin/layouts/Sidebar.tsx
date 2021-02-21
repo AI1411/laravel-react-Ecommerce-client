@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../dashboard/style.css';
 
-const Sidebar = () => {
+const Sidebar = (props: any) => {
     return (
         <div className="bg-gray-200">
             <div className="flex flex-col sm:flex-row sm:justify-around">
@@ -13,7 +13,7 @@ const Sidebar = () => {
                     </div>
 
                     <nav className="mt-10">
-                        <Link className="flex items-center py-2 px-8 bg-gray-200 text-gray-700 border-r-4 border-gray-700"
+                        <Link className={`flex items-center py-2 px-8 ${props.active === "dashboard" && 'bg-gray-200'} text-gray-700 border-r-4 border-gray-700`}
                            to={'/admin/dashboard'}>
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -25,7 +25,7 @@ const Sidebar = () => {
                             <span className="mx-4 font-medium">Dashboard</span>
                         </Link>
 
-                        <Link className="flex items-center mt-5 py-2 px-8 text-gray-600 border-r-4 border-white hover:bg-gray-200 hover:text-gray-700 hover:border-gray-700"
+                        <Link className={`flex items-center mt-5 py-2 px-8 text-gray-600 ${props.active === "users" && 'bg-gray-200'} border-r-4 border-white hover:bg-gray-200 hover:text-gray-700 hover:border-gray-700`}
                            to={'/admin/users'}>
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -39,7 +39,7 @@ const Sidebar = () => {
                             <span className="mx-4 font-medium">Users</span>
                         </Link>
 
-                        <Link className="flex items-center mt-5 py-2 px-8 text-gray-600 border-r-4 border-white hover:bg-gray-200 hover:text-gray-700 hover:border-gray-700"
+                        <Link className={`flex items-center mt-5 py-2 px-8 text-gray-600 ${props.active === "product" && 'bg-gray-200'} border-r-4 border-white hover:bg-gray-200 hover:text-gray-700 hover:border-gray-700`}
                            to={'/admin/products'}>
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -50,7 +50,7 @@ const Sidebar = () => {
                             <span className="mx-4 font-medium">Products</span>
                         </Link>
 
-                        <Link className="flex items-center mt-5 py-2 px-8 text-gray-600 border-r-4 border-white hover:bg-gray-200 hover:text-gray-700 hover:border-gray-700"
+                        <Link className={`flex items-center mt-5 py-2 px-8 text-gray-600 ${props.active === "main_categories" && 'bg-gray-200'} border-r-4 border-white hover:bg-gray-200 hover:text-gray-700 hover:border-gray-700`}
                               to={'/admin/main_categories'}>
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -61,7 +61,7 @@ const Sidebar = () => {
                             <span className="mx-4 font-medium">Main Category</span>
                         </Link>
 
-                        <Link className="flex items-center mt-5 py-2 px-8 text-gray-600 border-r-4 border-white hover:bg-gray-200 hover:text-gray-700 hover:border-gray-700"
+                        <Link className={`flex items-center mt-5 py-2 px-8 text-gray-600 ${props.active === "categories" && 'bg-gray-200'} border-r-4 border-white hover:bg-gray-200 hover:text-gray-700 hover:border-gray-700`}
                               to={'/admin/categories'}>
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path

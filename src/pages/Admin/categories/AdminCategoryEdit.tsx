@@ -50,7 +50,7 @@ const AdminCategoryEdit = (props: any) => {
         })
     }
     return (
-        <AdminWrapper>
+        <AdminWrapper active={'categories'}>
             <div className="grid w-3/6 place-items-center mx-auto">
                 <div className="w-full p-12 bg-white">
                     <h1 className="text-xl font-semibold">Create Product</h1>
