@@ -2,9 +2,12 @@ import React, {useEffect, useState} from 'react';
 import AdminWrapper from '../layouts/AdminWrapper';
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import Modal from '../../../components/Modal';
 
 const AdminProducts = () => {
     const [products, setProducts] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+    const [targetId, setTargetId] = useState(null);
 
     useEffect(() => {
         getProducts();
@@ -17,8 +20,26 @@ const AdminProducts = () => {
         setProducts(data);
     }
 
+    const openDeleteModal = () => {
+        setOpenModal(true);
+    }
+
+    const closeDeleteModal = () => {
+        setOpenModal(false);
+    }
+
+    const deleteProducts = () => {
+        axios.delete(`http://stars.test/api/products/${targetId}`).then(() => {
+            getProducts();
+            return closeDeleteModal();
+        }).catch(err => {
+            alert('error')
+        });
+    }
+
     return (
         <AdminWrapper active={'product'}>
+            {openModal && <Modal handleFunc={closeDeleteModal} target={'Product'} deleteFunc={deleteProducts} targetId={targetId} />}
             <div className="text-gray-900 bg-gray-200 w-full">
                 <div className="p-4 flex">
                     <h1 className="text-3xl">
@@ -62,6 +83,11 @@ const AdminProducts = () => {
                                             className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit
                                     </Link>
                                     <button type="button"
+                                            value={product.slug}
+                                            onClick={() => {
+                                                setTargetId(product.slug);
+                                                openDeleteModal();
+                                            }}
                                             className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete
                                     </button>
                                 </td>
