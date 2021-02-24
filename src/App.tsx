@@ -23,6 +23,8 @@ import AdminCreateMainCategory from "./pages/Admin/main_categories/AdminCreateMa
 import AdminCategoryEdit from "./pages/Admin/categories/AdminCategoryEdit";
 import AdminMainCategoryEdit from "./pages/Admin/main_categories/AdminMainCategoryEdit";
 import AdminProductEdit from "./pages/Admin/products/AdminProductEdit";
+import Rankings from "./pages/rankings/Rankings";
+import CategoryRankings from './pages/rankings/CategoryRankings';
 
 const App = () => {
     return (
@@ -39,6 +41,8 @@ const App = () => {
                 <Route path="/history" component={PurchaseHistory} exact/>
                 <Route path="/favorites" component={Favorites} exact/>
                 <Route path="/profile" component={Profile} exact/>
+                <Route path="/rankings" component={Rankings} exact/>
+                <Route path="/rankings/:slug" component={CategoryRankings} exact/>
                 {/*管理画面*/}
                 <Route path="/admin/dashboard" component={Dashboard} exact/>
                 {/*Product*/}

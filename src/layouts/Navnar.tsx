@@ -60,8 +60,12 @@ const Navbar = () => {
         <div className="bg-gray-200 font-sans leading-normal tracking-normal">
             <nav className="relative bg-white border-b-2 border-gray-300 text-gray-900">
                 <div className="container mx-auto flex justify-between">
-                    <div className="relative block p-4 lg:p-6 text-xl text-blue-600 font-bold">Logo</div>
+                    <Link to={'/'} className="relative block p-4 lg:p-6 text-xl text-blue-600 font-bold">Logo</Link>
                     <ul className="flex">
+                        <li className="hover:bg-blue-800 hover:text-white">
+                            <Link to="/rankings"
+                                  className="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">Ranking</Link>
+                        </li>
                         <li className="hover:bg-blue-800 hover:text-white">
                             <Link to="/products"
                                   className="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">Products</Link>

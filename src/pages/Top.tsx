@@ -1,10 +1,11 @@
 import React from 'react';
+import Wrapper from "./layouts/Wrapper";
 
 const Top = () => {
     return (
-        <div>
+        <Wrapper>
          top
-        </div>
+        </Wrapper>
     );
 };
 

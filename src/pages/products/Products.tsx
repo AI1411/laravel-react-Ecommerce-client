@@ -75,7 +75,7 @@ const Products = () => {
                     {message}
                     {products.map((product: any, index) =>
                         <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" key={index}>
-                            <Link to={`/products/${product.id}`}>
+                            <Link to={`/products/${product.slug}`}>
                                 <img className="hover:grow hover:shadow-lg h-48 w-56 object-contain"
                                      src={product.image}/>
                             </Link>
