@@ -31,7 +31,7 @@ const CategoryRankings = (props: any) => {
             <section className="bg-white py-8 flex">
                 <div className="flex-auto">
                     <nav className="mt-10">
-                        <Link className="flex items-center py-2 px-8 text-gray-700 border-r-4 border-gray-700" to={'/'}>総合ランキング</Link>
+                        <Link className="flex items-center py-2 px-8 text-gray-700 border-r-4 border-gray-700" to={'/rankings'}>総合ランキング</Link>
                         {categories.map((category: any, index) =>
                             <Link to={`/rankings/${category.slug}`} className="flex items-center py-2 px-8 text-gray-700 border-r-4 border-gray-700">
                                 <span className="mx-4 font-medium">{category.name}</span>
