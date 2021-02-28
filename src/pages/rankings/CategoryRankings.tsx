@@ -33,7 +33,7 @@ const CategoryRankings = (props: any) => {
                     <nav className="mt-10">
                         <Link className="flex items-center py-2 px-8 text-gray-700 border-r-4 border-gray-700" to={'/rankings'}>総合ランキング</Link>
                         {categories.map((category: any, index) =>
-                            <Link to={`/rankings/${category.slug}`} className="flex items-center py-2 px-8 text-gray-700 border-r-4 border-gray-700">
+                            <Link to={`/rankings/${category.slug}`} className={`flex items-center ${targetSlug === category.slug ? 'bg-gray-100' : ''} hover:bg-gray-100 py-2 px-8 text-gray-700 border-r-4 border-gray-700`}>
                                 <span className="mx-4 font-medium">{category.name}</span>
                             </Link>
                         )}

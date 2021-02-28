@@ -25,6 +25,7 @@ import AdminMainCategoryEdit from "./pages/Admin/main_categories/AdminMainCatego
 import AdminProductEdit from "./pages/Admin/products/AdminProductEdit";
 import Rankings from "./pages/rankings/Rankings";
 import CategoryRankings from './pages/rankings/CategoryRankings';
+import AdminRanking from "./pages/Admin/ranking/AdminRanking";
 
 const App = () => {
     return (
@@ -60,6 +61,8 @@ const App = () => {
                 <Route path="/admin/categories" component={AdminCategories} exact/>
                 <Route path="/admin/categories/create" component={AdminCreateCategory} exact/>
                 <Route path="/admin/categories/:slug/edit" component={AdminCategoryEdit} exact/>
+                {/*AdminRanking*/}
+                <Route path="/admin/ranking" component={AdminRanking} exact/>
             </Switch>
         </Router>
     );
