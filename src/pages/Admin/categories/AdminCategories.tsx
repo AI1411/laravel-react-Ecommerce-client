@@ -2,9 +2,12 @@ import React, {useEffect, useState} from 'react';
 import AdminWrapper from "../layouts/AdminWrapper";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import Modal from "../../../components/Modal";
 
 const AdminCategories = () => {
     const [categories, setCategories] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+    const [targetId, setTargetId] = useState(null);
 
     useEffect(() => {
         getCategories();
@@ -16,8 +19,26 @@ const AdminCategories = () => {
 
         setCategories(data);
     }
+
+    const openDeleteModal = () => {
+        setOpenModal(true);
+    }
+
+    const closeDeleteModal = () => {
+        setOpenModal(false);
+    }
+
+    const deleteCategories = () => {
+        axios.delete(`http://stars.test/api/categories/${targetId}`).then(() => {
+            getCategories();
+            return closeDeleteModal();
+        }).catch(err => {
+            alert('error')
+        });
+    }
     return (
         <AdminWrapper active={'categories'}>
+            {openModal && <Modal handleFunc={closeDeleteModal} target={'Category'} deleteFunc={deleteCategories} targetId={targetId} />}
             <div className="text-gray-900 bg-gray-200 w-full">
                 <div className="p-4 flex">
                     <h1 className="text-3xl">
@@ -52,6 +73,11 @@ const AdminCategories = () => {
                                             className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit
                                     </Link>
                                     <button type="button"
+                                            value={category.slug}
+                                            onClick={() => {
+                                                setTargetId(category.slug);
+                                                openDeleteModal();
+                                            }}
                                             className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete
                                     </button>
                                 </td>
